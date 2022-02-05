@@ -1,4 +1,5 @@
 import 'package:bmi_calculator_flutter/constants/app_constants.dart';
+import 'package:bmi_calculator_flutter/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -15,7 +16,7 @@ class _LoadingState extends State<Loading> {
 
   Future<void> delaySplash() async{
     await Future.delayed(const Duration(seconds: 1), (){});
-    Navigator.pushReplacementNamed(context, '/home');
+    Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => const Home()), (Route<dynamic> route) => false);
   }
 
   @override
